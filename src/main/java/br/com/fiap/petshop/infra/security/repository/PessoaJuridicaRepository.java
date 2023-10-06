@@ -72,7 +72,7 @@ public class PessoaJuridicaRepository implements Repository<PessoaJuridica, Long
             authorities.add( cli );
         }
         authorities.forEach(usuario::addAuthority);
-        manager.merge(usuario);
+        manager.persist(usuario);
         manager.getTransaction().commit();
 
         return pessoa;
